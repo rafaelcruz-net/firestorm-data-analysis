@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Domain", "Firestorm.Domain\Firestorm.Domain.csproj", "{7EFF66C8-AC59-4ACB-A572-125AC3BC4E31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Domain.Service", "Firestorm.Domain.Service\Firestorm.Domain.Service.csproj", "{71DDC9E5-9A06-440D-AEC8-A0DEC214CC43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Domain.Repository", "Firestorm.Domain.Repository\Firestorm.Domain.Repository.csproj", "{B9185F56-33F8-4C51-B47F-2E0A689E0597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Infra", "Firestorm.Infra\Firestorm.Infra.csproj", "{28640533-87BF-41AF-96E0-39C9F2FFA2A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Tests", "Firestorm.Tests\Firestorm.Tests.csproj", "{A5E5EE6D-AB99-4B64-B9E4-BE95EE851952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestorm.Web", "Firestorm.Web\Firestorm.Web.csproj", "{96F70987-8840-4AB5-B987-5DF669A268FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EFF66C8-AC59-4ACB-A572-125AC3BC4E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFF66C8-AC59-4ACB-A572-125AC3BC4E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFF66C8-AC59-4ACB-A572-125AC3BC4E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFF66C8-AC59-4ACB-A572-125AC3BC4E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DDC9E5-9A06-440D-AEC8-A0DEC214CC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DDC9E5-9A06-440D-AEC8-A0DEC214CC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DDC9E5-9A06-440D-AEC8-A0DEC214CC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DDC9E5-9A06-440D-AEC8-A0DEC214CC43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9185F56-33F8-4C51-B47F-2E0A689E0597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9185F56-33F8-4C51-B47F-2E0A689E0597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9185F56-33F8-4C51-B47F-2E0A689E0597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9185F56-33F8-4C51-B47F-2E0A689E0597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28640533-87BF-41AF-96E0-39C9F2FFA2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28640533-87BF-41AF-96E0-39C9F2FFA2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28640533-87BF-41AF-96E0-39C9F2FFA2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28640533-87BF-41AF-96E0-39C9F2FFA2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E5EE6D-AB99-4B64-B9E4-BE95EE851952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E5EE6D-AB99-4B64-B9E4-BE95EE851952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E5EE6D-AB99-4B64-B9E4-BE95EE851952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E5EE6D-AB99-4B64-B9E4-BE95EE851952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F70987-8840-4AB5-B987-5DF669A268FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F70987-8840-4AB5-B987-5DF669A268FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F70987-8840-4AB5-B987-5DF669A268FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F70987-8840-4AB5-B987-5DF669A268FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
