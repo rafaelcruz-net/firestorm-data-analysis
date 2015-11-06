@@ -31,8 +31,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.Futures.5.0.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +81,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Data\Context\BaseContext.cs" />
+    <Compile Include="Data\Factory\ExpressionFactory.cs" />
+    <Compile Include="Data\GroupBy\GroupByAnalyser.cs" />
+    <Compile Include="Data\GroupBy\GroupByParser.cs" />
+    <Compile Include="Data\Interfaces\IMapping.cs" />
+    <Compile Include="Data\Interfaces\IRepository.cs" />
+    <Compile Include="Data\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Data\Order\OrderByAnalyser.cs" />
+    <Compile Include="Data\Order\OrderByParser.cs" />
+    <Compile Include="Data\Order\SortEnum.cs" />
+    <Compile Include="Data\Query\AndConditional.cs" />
+    <Compile Include="Data\Query\ConditionalEnum.cs" />
+    <Compile Include="Data\Query\ExpressionAnalyser.cs" />
+    <Compile Include="Data\Query\ExpressionEnum.cs" />
+    <Compile Include="Data\Query\ExpressionLeftSide.cs" />
+    <Compile Include="Data\Query\ExpressionParser.cs" />
+    <Compile Include="Data\Query\ExpressionRightSide.cs" />
+    <Compile Include="Data\Query\OrConditional.cs" />
+    <Compile Include="Data\Query\QueryParser.cs" />
+    <Compile Include="IoC\Kernel.cs" />
+    <Compile Include="IoC\NinjectDependencyResolver.cs" />
+    <Compile Include="IoC\NinjectDependencyScope.cs" />
+    <Compile Include="MVC\ActionResult\SiarmJson.cs" />
+    <Compile Include="MVC\ActionResult\SiarmView.cs" />
+    <Compile Include="MVC\Controllers\BaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\IRunAfterEachRequest.cs" />
+    <Compile Include="Task\IRunBeforeEachRequest.cs" />
+    <Compile Include="Task\IRunOnError.cs" />
+    <Compile Include="Utils\CamelCasePropertyNamesContractResolver.cs" />
+    <Compile Include="Utils\PropertyUtils.cs" />
+    <Compile Include="Utils\ViewModelUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVC\Filters\" />
+    <Folder Include="MVC\Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
