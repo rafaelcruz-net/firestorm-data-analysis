@@ -81,7 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Context\BaseContext.cs" />
+    <Compile Include="Data\Context\FirestormBaseContext.cs" />
     <Compile Include="Data\Factory\ExpressionFactory.cs" />
     <Compile Include="Data\GroupBy\GroupByAnalyser.cs" />
     <Compile Include="Data\GroupBy\GroupByParser.cs" />
@@ -103,9 +103,9 @@
     <Compile Include="IoC\Kernel.cs" />
     <Compile Include="IoC\NinjectDependencyResolver.cs" />
     <Compile Include="IoC\NinjectDependencyScope.cs" />
-    <Compile Include="MVC\ActionResult\SiarmJson.cs" />
-    <Compile Include="MVC\ActionResult\SiarmView.cs" />
-    <Compile Include="MVC\Controllers\BaseController.cs" />
+    <Compile Include="MVC\ActionResult\FirestormJson.cs" />
+    <Compile Include="MVC\ActionResult\FirestormView.cs" />
+    <Compile Include="MVC\Controllers\FirestormBaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task\IRunAfterEachRequest.cs" />
     <Compile Include="Task\IRunBeforeEachRequest.cs" />
