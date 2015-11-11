@@ -3,40 +3,64 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - SIARMNET</title>
     @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+<body class="color-tiplan">
+    <div class="modal modal-backdrop" data-ng-class="{ show: isBusy }">
+        <div class="modal-body">
+            <div class="row center-block text-center h4">
+                <i class="fa fa-lg fa-spinner fa-pulse"></i> Carregando dados...
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header width100">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <a class="navbar-brand" href="#"><img src="~/Content/images/tiplan-logo.png" /></a>
+                <ul class="icones nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Cadastro</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    <script type="text/javascript" src="~/Scripts/vendor/requirejs/require.js"></script>
-    <script type="text/javascript" src="~/Scripts/app/firestorm.app.js"></script>
+            <ul class="menu nav navbar-nav width100">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Consulta Simples", "Consulta", "Cidade")</li>
+                <li>@Html.ActionLink("Cidades RJ", "CidadesRJ", "Cidade")</li>
+                <li>@Html.ActionLink("Cidades Inicial RJ", "CidadesInicialRJ", "Cidade")</li>
+                <li>@Html.ActionLink("Consulta SQL Logradouro", "Index", "Logradouro")</li>
+            </ul>
+
+            <div class="clearfix"></div>
+        </div>
+    </nav>
+    <main class="container-fluid body-content margin-top-100">
+        @RenderBody()
+    </main>
+
+    <a href="#" title="voltar ao topo" class="back-to-top btn  btn-primary btn-fab fa fa-fw fa-arrow-up"></a>
+    <footer class="body-content">
+        <div class="row rodape">
+            <div class="col-lg-1">
+                <img alt="tiplan logomarca" class="brand-logo" src="~/Content/images/tiplan-logo.png" width="120" />
+            </div>
+            <div class="col-lg-9">
+                <p class="text-center padding-top-10"><i class="fa fa-copyright"></i> 2015 TIPLAN - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/vendor/requirejs/require.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/siarmnet.app.js")"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

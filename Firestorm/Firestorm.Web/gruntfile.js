@@ -1,45 +1,83 @@
-﻿/// <vs BeforeBuild='sass, bower' SolutionOpened='bower:install' />
-module.exports = function (grunt) {
-    grunt.initConfig({
-        //this loads our packages for our grunt file
-        pkg: grunt.file.readJSON('package.json'),
+﻿module.exports = function (grunt) {
 
-        //this section does our bower installs for us
-        bower: {
-            install: {
-                options: {
-                    targetDir: './scripts/vendor',
-                    layout: 'byComponent',
-                    install: true,
-                    verbose: true,
-                    cleanTargetDir: false,
-                    cleanBowerDir: false,
-                    bowerOptions: {} 
-                }
-            } 
+    require('time-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        bower: 'main-bower-files',
+        bowercopy: 'grunt-bowercopy'
+    });
+
+    publicSass = './content/scss/',
+    publicCss = './content/css/',
+    publicFont = './content/fonts/',
+    vendorScript = './scripts/vendor/',
+    vendorStyle = './content/scss/vendor/',
+    devBower = './bower_components/';
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        exec: {
+            installBower: {
+                cmd: 'bower-installer'
+            }
         },
         sass: {
             dist: {
                 options: {
-                    sourcemap: "none"
+                    update: true,
+                    noCache: false,
+                    update: true,
+                    trace: true
                 },
                 files: [{
                     expand: true,
-                    cwd: "content/",
-                    src: ['sass/*.scss'],
-                    dest: 'content/css/',
-                    ext: '.min.css',
+                    cwd: publicSass,
+                    src: ['*.scss'],
+                    dest: publicCss,
+                    ext: '.css'
+                }]
+            }
+        },
+        copy: {
+            main: {
+                files: [{
+                    expand: true,
+                    cwd: 'bower_components/font-awesome/fonts',
+                    src: ['**'],
+                    dest: publicFont,
                     flatten: true
                 }]
             }
-        }
+        },
+        cssmin: {
+            dist: {
+                options: {
+                    shorthandCompacting: false,
+                    roundingPrecision: -1
+                },
+                files: [{
+                    expand: true,
+                    cwd: publicCss,
+                    src: ['style.css'],
+                    dest: publicCss,
+                    ext: '.min.css'
+                }]
+            }
+        },
+        clean: {
+            vendor: [vendorStyle, vendorScript],
+            mincss: [publicCss + '*.min.css']
+        },
     });
 
-    //npm modules need for our task
-    grunt.loadNpmTasks('grunt-bower-task');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.registerTask('install', 'Install bower dependencies', function () {
+        var exec = require('child_process').exec;
+        var cb = this.async();
+        exec('bower install --allow-root --verbose', { cwd: './' }, function (err, stdout, stderr) {
+            console.log(stdout);
+            cb();
+        });
+    });
 
-    grunt.registerTask('default', ['bower', 'sass']);
+    grunt.registerTask('files', ['exec', 'copy']);
+    grunt.registerTask('default', ['install', 'exec', 'copy', 'sass', 'cssmin']);
 };
