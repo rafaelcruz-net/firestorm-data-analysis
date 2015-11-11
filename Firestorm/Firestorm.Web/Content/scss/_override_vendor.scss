@@ -1,0 +1,8 @@
+﻿// Override Variables
+$fa-font-path:        "../../fonts/font-awesome" !default;
+$roboto-font-path: "../fonts/materialize/roboto/" !default;
+$icons-font-path: "../fonts/materialize" !default;
+$material-font-path: "../fonts/materialize" !default;
+
+//Remove Roboto from Materialize
+html{font-family: GillSans, Calibri, Trebuchet, sans-serif;}

@@ -10,7 +10,7 @@
     publicCss = './content/css/',
     publicFont = './content/fonts/',
     vendorScript = './scripts/vendor/',
-    vendorStyle = './content/scss/vendor/',
+    vendorStyle = './content/scss/',
     devBower = './bower_components/';
 
     grunt.initConfig({
@@ -38,13 +38,20 @@
             }
         },
         copy: {
-            main: {
+            fontawesome: {
                 files: [{
+                    cwd: 'bower_components/font-awesome/',
                     expand: true,
-                    cwd: 'bower_components/font-awesome/fonts',
-                    src: ['**'],
-                    dest: publicFont,
-                    flatten: true
+                    src: ['fonts/*'],
+                    dest: publicFont
+                }]
+            },
+            materialize: {
+                files: [{
+                    cwd: 'bower_components/materialize/font/',
+                    expand: true,
+                    src: ['material-design-icons/*', 'roboto/*'],
+                    dest: publicFont
                 }]
             }
         },

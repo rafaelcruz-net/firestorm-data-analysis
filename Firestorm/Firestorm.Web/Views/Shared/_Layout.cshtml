@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - SIARMNET</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
@@ -57,9 +57,6 @@
             </div>
         </div>
     </footer>
-
-    <script type="text/javascript" src="@Url.Content("~/Scripts/vendor/requirejs/require.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/app/siarmnet.app.js")"></script>
 
     @RenderSection("scripts", required: false)
 </body>
