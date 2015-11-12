@@ -51,5 +51,5 @@
 });
 
 require(['jquery', 'underscore', 'angular', 'material'], function ($, _, angular) {
-    $.material.init();
+    
 });

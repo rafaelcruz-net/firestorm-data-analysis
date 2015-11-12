@@ -42,8 +42,9 @@
                 files: [{
                     cwd: 'bower_components/font-awesome/',
                     expand: true,
-                    src: ['fonts/*'],
-                    dest: publicFont
+                    src: ['fonts/**'],
+                    dest: publicFont + "/font-awesome",
+                    flatten: true
                 }]
             },
             materialize: {

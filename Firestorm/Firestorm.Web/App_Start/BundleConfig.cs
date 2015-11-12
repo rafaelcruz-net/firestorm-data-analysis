@@ -25,9 +25,7 @@ namespace Firestorm.Web
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include(
-                    "~/Content/bootstrap.css",
-                    "~/Content/bootstrap-material-design/css/*.css",
-                    "~/Content/scss/main.css"
+                    "~/Content/css/main.css"
                 ));  
 
 
