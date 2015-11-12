@@ -53,6 +53,14 @@
                     src: ['material-design-icons/*', 'roboto/*'],
                     dest: publicFont
                 }]
+            },
+            bootstrap: {
+                files: [{
+                    cwd: 'bower_components/bootstrap-sass-official/assets/fonts',
+                    expand: true,
+                    src: ['bootstrap/*'],
+                    dest: publicFont
+                }]
             }
         },
         cssmin: {

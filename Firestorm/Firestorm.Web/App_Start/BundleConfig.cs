@@ -23,7 +23,12 @@ namespace Firestorm.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/css/main.css"));  
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include(
+                    "~/Content/bootstrap.css",
+                    "~/Content/bootstrap-material-design/css/*.css",
+                    "~/Content/scss/main.css"
+                ));  
 
 
         }

@@ -45,7 +45,8 @@
             "bootstrap-sass-official": "bower_components/bootstrap-sass-official/assets/stylesheets/**",
             "font-awesome": [ "bower_components/font-awesome/scss/**" ],
             "materialize": [ "bower_components/materialize/sass/**" ],
-            "bootstrap-material-design": "bower_components/bootstrap-material-design/sass/**"
+            "bootstrap-material-design": "bower_components/bootstrap-material-design/sass/**",
+            "bootstrap":  [ "bower_components/bootstrap/assets/**" ]
         }
     }
 }

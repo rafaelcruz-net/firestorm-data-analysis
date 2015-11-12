@@ -6,16 +6,8 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="color-tiplan">
-    <div class="modal modal-backdrop" data-ng-class="{ show: isBusy }">
-        <div class="modal-body">
-            <div class="row center-block text-center h4">
-                <i class="fa fa-lg fa-spinner fa-pulse"></i> Carregando dados...
-            </div>
-        </div>
-    </div>
     <nav class="navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header width100">
@@ -24,7 +16,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="~/Content/images/tiplan-logo.png" /></a>
                 <ul class="icones nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Cadastro</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
@@ -49,14 +40,13 @@
     <a href="#" title="voltar ao topo" class="back-to-top btn  btn-primary btn-fab fa fa-fw fa-arrow-up"></a>
     <footer class="body-content">
         <div class="row rodape">
-            <div class="col-lg-1">
-                <img alt="tiplan logomarca" class="brand-logo" src="~/Content/images/tiplan-logo.png" width="120" />
-            </div>
             <div class="col-lg-9">
                 <p class="text-center padding-top-10"><i class="fa fa-copyright"></i> 2015 TIPLAN - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="~/Scripts/vendor/requirejs/require.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/firestorm.app.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>

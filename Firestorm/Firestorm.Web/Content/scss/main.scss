@@ -1,27 +1,42 @@
-﻿//@import "_font.scss";
-
-//Vendor Base
+﻿@import "_font.scss";
 @import "font-awesome/font-awesome.scss";
-@import "bootstrap-sass-official/_bootstrap.scss";
-@import "bootstrap-material-design/material.scss";
-@import "bootstrap-material-design/ripples.scss";
-
-
-//Custom Style
-@import "_override_vendor.scss";
-@import "_pallete.scss";
-@import "_mixin.scss";
 
 body {
     padding-top: 50px;
 }
 
+/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-@each $theme-name, $colors in $firestorm-themes-colors {
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+/*definição de cores do tema */
+$themes-colors: ( tiplan: ( 
+    color1: #0d47a1, 
+    color2: #1565c0, 
+    color3: #bbdefb, 
+    color4: #ffab00, 
+    color5: #ffeecc, 
+    color6: #fff, 
+    color7: #ff9100, 
+    color8:#000000
+) );
+
+@each $theme-name, $colors in $themes-colors {
     $color1: map-get($colors, color1);
     $color2: map-get($colors, color2);
     $color3: map-get($colors, color3);
@@ -32,12 +47,11 @@ body {
     $color8: map-get($colors, color8);
 
     .color-#{$theme-name} {
-        a {
-            color: $color1;
-
-            &:hover {
-                color: $color3;
-            }
+        a, a:focus{
+            color:$color1;
+        }
+        a:hover{
+            color:$color3;
         }
         /*menu */
         .menu {
@@ -45,15 +59,10 @@ body {
 
             a {
                 color: $color6;
-                height: 48px;
-
-                &:hover {
-                    background-color: $color1;
-                    border-bottom: 4px solid $color4;
-                }
+                height:48px;
             }
 
-            li.active {
+            a:hover, li.active {
                 background-color: $color1;
                 border-bottom: 4px solid $color4;
             }
@@ -72,11 +81,11 @@ body {
             }
         }
         /*formulario */
-        label,
+        label, 
         .floating-label {
             color: $color1 !important;
         }
-
+       
         .form-control:focus,
         .form-control.focus {
             outline: none;
@@ -92,9 +101,8 @@ body {
             background-color: $color4;
             color: $color8;
         }
-
-        .btn.btn-flat:hover:not(.btn-ink), .btn-default.btn-flat:hover:not(.btn-ink) {
-            background-color: $color5;
+        .btn.btn-flat:hover:not(.btn-ink), .btn-default.btn-flat:hover:not(.btn-ink){
+            background-color:$color5;
         }
         /*botao dropdown*/
         .dropdown-menu li, .dropdown-menu-default li {
@@ -102,15 +110,14 @@ body {
 
             a {
                 color: $color1;
-                font-weight: 300;
+                font-weight:300;
+            }
 
-                &:hover {
-                    color: $color3;
-                }
-
-                .ative {
-                    color: $color7;
-                }
+            a:hover {
+                color: $color3;
+            }
+            .ative {
+                color:$color7;
             }
         }
         /*icones*/
@@ -119,49 +126,48 @@ body {
 
             a {
                 color: $color6;
+            }
 
-                &:hover, &:focus {
-                    background-color: $color1;
-                    color: $color3;
-                }
+            a:hover, a:focus {
+                background-color: $color1;
+                color: $color3;
             }
         }
-
         .icon-preview {
-            border: 1px solid #ccc;
-
+                
+              border: 1px solid #ccc;
+            
             span {
-                background: $color5;
-                color: $color8;
+              background: $color5;
+              color: $color8;
             }
-        }
+         }
+         .icon-preview:hover i { 
+             color: $color1;
 
-        .icon-preview:hover i {
-            color: $color1;
-        }
+            }
+
         /*TITULOS */
         h1, h2, h3, h4, h5, h6 {
             color: $color1;
-            text-transform: uppercase;
+            text-transform:uppercase;
         }
-
         h5 small {
-            color: $color4;
+            color:$color4;
         }
         /*tabela */
         .jsgrid-groupped-row-header {
-            background-color: rgba(225, 224, 224, 0.30) !important;
-            border-bottom: none;
-            color: $color2;
-            text-transform: uppercase;
+            background-color:rgba(225, 224, 224, 0.30) !important;
+            border-bottom:none;
+            color:$color2;
+            text-transform:uppercase;
             font-weight: 500;
         }
-
-        .jsgrid-header-row > th, .table th {
+        .jsgrid-header-row > th, .table th{
             background-color: $color2;
-            color: $color6;
+            color:$color6;
+            
         }
-
         .jsgrid-row > td {
             background: $color6;
         }
@@ -169,7 +175,7 @@ body {
         .jsgrid-alt-row > td {
             background: #f2f3f8;
         }
-
+              
         .jsgrid-filter-row > td {
             background: #fcfcfc;
         }
@@ -186,42 +192,38 @@ body {
             background: $color5;
             border-color: $color5;
         }
-
         .jsgrid-header-sort-asc:before {
-            border-color: transparent transparent $color4 transparent;
+             border-color: transparent transparent $color4 transparent;
         }
 
         .jsgrid-header-sort-desc:before {
             border-color: $color4 transparent transparent transparent;
         }
+
         /*rodape */
         footer {
-            background-color: $color2;
-
-            p {
-                color: $color6;
+            background-color:$color2;
+           
+            p{
+            color:$color6;
             }
         }
-
         /* acordion*/
         .panel > .panel-heading,
         .panel-default > .panel-heading {
-            background-color: $color2;
+          background-color: $color2;
         }
-
-        h4.panel-title > a {
-            color: $color6;
-            font-weight: 400;
+        h4.panel-title > a{
+            color:$color6 ;
+            font-weight:400;
         }
-
-        h4.panel-title > a:hover {
-            color: $color3;
-            text-decoration: none;
-        }
-
-        h4.panel-title > a:focus {
-            color: $color4;
-            text-decoration: none;
+        h4.panel-title > a:hover{
+                color:$color3;
+                text-decoration:none;
+            }
+        h4.panel-title > a:focus{
+            color:$color4;
+            text-decoration:none;
         }
     }
 }
@@ -230,67 +232,51 @@ body {
 .margin-top-10 {
     margin-top: 10px;
 }
-
 .margin-top-20 {
     margin-top: 20px;
 }
-
 .margin-top-60 {
     margin-top: 60px;
 }
-
 .margin-top-100 {
     margin-top: 100px;
 }
-
-.margin-left-10 {
-    margin-left: 10px;
+.margin-left-10{
+    margin-left:10px;
 }
-
-.padding-top-10 {
-    padding-top: 10px;
+.padding-top-10{
+    padding-top:10px;
 }
-
-.padding-bottom-10 {
-    padding-bottom: 10px;
+.padding-bottom-10{
+    padding-bottom:10px;
 }
-
-.padding-bottom-5 {
-    padding-bottom: 5px;
+.padding-bottom-5{
+    padding-bottom:5px;
 }
-
-.padding-left-10 {
-    padding-left: 10px;
+.padding-left-10{
+    padding-left:10px;
 }
-
-.padding-right-10 {
-    padding-right: 10px;
+.padding-right-10{
+    padding-right:10px;
 }
-
 .width100 {
     width: 100%;
 }
-
-.colorVerde {
+.colorVerde{
     color: forestgreen !important;
 }
-
-.colorVermelho {
-    color: red !important;
+.colorVermelho{
+    color:red !important;
 }
-
 .noPadding {
-    padding: 0px 0px 0px 0px !important;
+    padding:0px 0px 0px 0px !important;
 }
-
 .noMargin {
-    margin: 0px 0px 0px 0px !important;
+    margin:0px 0px 0px 0px !important;
 }
-
-.height-42 {
-    min-height: 42px !important;
+.height-42{
+    min-height:42px !important;
 }
-
 .modal-backdrop {
     z-index: 1035;
     opacity: 1;
@@ -327,71 +313,52 @@ body {
 .icon-block {
     padding: 0 15px;
 }
+.icons-material .row { margin-bottom: 20px; }
+            .icons-material .col-xs-2 { text-align: center; }
+            .icons-material i { font-size: 14pt; }
 
-.icons-material .row {
-    margin-bottom: 20px;
-}
-
-.icons-material .col-xs-2 {
-    text-align: center;
-}
-
-.icons-material i {
-    font-size: 14pt;
-}
-
-.icon-preview {
-    display: inline-block;
-    padding: 10px 10px 7px 10px;
-    margin: 2px;
-    border-radius: 3px;
-    cursor: pointer;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-preview span {
-    display: none;
-    position: absolute;
-    top: 43px;
-    background: black;
-    padding: 5px 8px;
-    font-size: 12px;
-    text-transform: capitalize;
-    font-family: Roboto;
-    border-radius: 2px;
-    z-index: 10;
-}
-
-.icon-preview:hover span {
-    display: block;
-    cursor: text;
-}
-
-.icon-preview button {
-    background: none;
-    border: none;
-    padding: 0px;
-    margin: 0px;
-    cursor: pointer;
-}
-
+            .icon-preview {
+                display: inline-block;
+                padding: 10px 10px 7px 10px;
+                margin: 2px;
+                border-radius: 3px;
+                cursor: pointer;
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+                transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .icon-preview span {
+                display: none;
+                position: absolute;
+                top:43px;
+                background: black;
+                padding: 5px 8px;
+                font-size: 12px;
+                text-transform:capitalize;
+                font-family: Roboto;
+                border-radius: 2px;
+                z-index: 10;
+            }
+            .icon-preview:hover span { display: block; cursor: text; }
+             .icon-preview button{
+                background:none;
+                border:none;
+                padding: 0px;
+                margin: 0px;
+                cursor: pointer;
+            }
 .dropdown-button i.right {
     margin-left: 0px !important;
 }
-
 .btn.btn-fab.btn-fab-minimo {
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-    font-size: 13px;
+      width: 20px;
+      height: 20px;
+      padding: 4px;
+      font-size: 13px;
 }
-
 .rodape {
-    width: 95%;
-    padding: 10px 0px 10px 0px;
+    width:95%;
+    padding:10px 0px 10px 0px;
 }
-
 /*victor customs */
 .consultaDirective ul {
     margin-bottom: 10px;
@@ -446,8 +413,8 @@ body {
     color: #ff0000;
 }
 
-.back-to-top {
-    display: none;
+ .back-to-top {
+    display:none;
     position: fixed;
     bottom: 1.5em;
     right: .5em;
@@ -455,8 +422,8 @@ body {
     font-size: 65px;
 }
 
-.atwho-view {
-    position: absolute;
+ .atwho-view {
+    position:absolute;
     display: none;
     background: white;
     color: black;
@@ -481,102 +448,95 @@ body {
 }
 
 .atwho-view .cur {
-    color: #ffffff;
-    text-decoration: none;
-    outline: 0;
-    background-color: #428bca;
-}
-
+     color: #ffffff;
+     text-decoration: none;
+     outline: 0;
+     background-color: #428bca;
+ }
 .atwho-view .cur small {
     color: white;
 }
-
 .atwho-view strong {
+  
 }
-
 .atwho-view .cur strong {
     color: white;
-    font: bold;
+    font:bold;
 }
-
 .atwho-view ul {
     /* width: 100px; */
-    list-style: none;
-    padding: 0;
-    margin: auto;
+    list-style:none;
+    padding:0;
+    margin:auto;
 }
-
 .atwho-view ul li {
-    display: block;
-    padding: 3px 15px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333333;
-    white-space: nowrap;
+  display: block;
+  padding: 3px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
     /* border-top: 1px solid #C8C8C8; */
 }
-
 .atwho-view small {
     font-size: smaller;
     color: #777;
     font-weight: normal;
 }
-
 .collapse .list-group {
-    margin: 10px 0px !important;
+    margin:10px 0px !important;
 }
 
 .list-group .list-group-separator:before {
-    width: 100%;
+  width: 100%;
 }
-
 .panel-group .panel + .panel {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .jsgrid-group-row {
     height: 30px;
 }
 
-.jsgrid-group-row ul {
-    display: none;
-    margin: 0;
-    padding: 0;
-}
+    .jsgrid-group-row ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.jsgrid-group-row ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
+        .jsgrid-group-row ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+    .jsgrid-group-row-item {
+        padding: 4px 8px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-weight: bold;        
+    }
+    
+    .jsgrid-group-row-item-close {
+        padding: 0 0 0 10px;
+        color: #777;
+        font-weight: normal;
+        cursor: pointer;
+    }
 
-.jsgrid-group-row-item {
-    padding: 4px 8px;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-weight: bold;
-}
+    .jsgrid-header-row > th > span.jsgrid-edit-header:hover {
+        border: 1px dashed #ff00ff;
+        cursor: text;
+    }
 
-.jsgrid-group-row-item-close {
-    padding: 0 0 0 10px;
-    color: #777;
-    font-weight: normal;
-    cursor: pointer;
-}
+    .jsgrid-hover-action {
+        margin: -5px 0 0 5px;
+        display: none;
+        box-shadow: none;
+        text-align: left;
+    }
 
-.jsgrid-header-row > th > span.jsgrid-edit-header:hover {
-    border: 1px dashed #ff00ff;
-    cursor: text;
-}
-
-.jsgrid-hover-action {
-    margin: -5px 0 0 5px;
-    display: none;
-    box-shadow: none;
-    text-align: left;
-}
-
-.jsgrid-footer-row a {
-    cursor: pointer;
-}
+    .jsgrid-footer-row a{
+        cursor: pointer;
+    }

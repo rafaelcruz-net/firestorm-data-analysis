@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="Content\css\main.css" />
     <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.svg" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.svg" />
@@ -287,6 +288,10 @@
     <Content Include="Content\scss\bootstrap-material-design\_tabs.scss" />
     <Content Include="Content\scss\bootstrap-material-design\_variables.scss" />
     <Content Include="Content\scss\bootstrap-material-design\_welljumbo.scss" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="Content\scss\main.scss" />
     <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.eot" />
     <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.ttf" />
