@@ -131,13 +131,10 @@
     <Content Include="Content\css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.svg" />
-    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.svg" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gruntfile.js" />
     <Content Include="model.html" />
@@ -179,10 +176,6 @@
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.ttf" />
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.woff" />
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.woff2" />
-    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.woff" />
@@ -192,9 +185,6 @@
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <None Include="Content\scss\main.scss" />
-    <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.eot" />
-    <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.ttf" />
-    <Content Include="Content\fonts\bootstrap-material-design\Material-Design-Icons.woff" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.eot" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.ttf" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.woff" />
@@ -248,7 +238,6 @@
     <Content Include="Content\scss\materialize\materialize.scss" />
     <Content Include="Content\scss\_pallete.scss" />
     <Content Include="Content\scss\_mixin.scss" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -296,9 +285,6 @@
     <Folder Include="Scripts\app\services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
