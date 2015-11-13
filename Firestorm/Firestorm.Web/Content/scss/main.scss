@@ -1,13 +1,28 @@
 ﻿@import "_font";
 @import "_mixin";
 @import "_override_vendor";
+@import "_pallete";
 
 @import "font-awesome/font-awesome";
 @import "materialize/materialize";
 
+.nav-red-color {
+   background-color: palette(red, base);
+}
+
+.page-orange-color {
+    background-color: palette(orange, base) !important;
+}
+
+.icon-blue-color{
+    color: palette(blue, base);
+}
+
 .icon-block {
   padding: 0 15px;
 }
+
+
 .icon-block .material-icons {
 	font-size: inherit;
 }

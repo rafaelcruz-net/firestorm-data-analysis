@@ -12,10 +12,9 @@
             exports: "_",
         },
         jquery: {
-            exports: "$"
+            exports: "jquery"
         },
         angular: {
-            deps: ['jquery'],
             exports: "angular"
         },
         ngResource: {
@@ -28,10 +27,9 @@
                 "angular"
             ]
         }
-
     }
 });
 
-require(['jquery', 'underscore', 'angular'], function ($, _, angular) {
+require(['angular'], function (angular) {
     
 });

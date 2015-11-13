@@ -1,40 +1,30 @@
 ﻿
 // Palette function,
 @function palette($palette, $tone: 'base') {
-    @return map-get(map-get($palettes, $palette), $tone);
+    @return map-get(map-get($firestorm-palettes, $palette), $tone);
     //usage: background:palette(green, light)
 }
 
-
-//Family function
-@function family($family, $weight){
-    @if $family == frutiger {
-        @return map-get(map-get($families, $family), $weight), sans-serif;
-    } @else {
-        @return map-get(map-get($families, $family), $weight), serif;
-    }
-    //usage: font:12px/1.5 family(frutiger, light);
-};
-
-    $palettes: (
-    green: (
-        base:#879d44,
-        dark:#839a3f,
-        basehover:#829841,
-        darkhover:#7c923c,
-        border:#7d913e
+$firestorm-palettes: (
+    red: (
+        light: #ef5350,
+        base: #c62828,
+        dark: #b71c1c
     ),
     orange: (
-        base:#ec8d2b,
-        dark:#ef8f2c,
-        basehover:#e48523,
-        darkhover:#dc8226,
-        border:#e68929
+        light: #ffb74d,
+        base: #ff9800,
+        dark: #ef6c00
     ),
     blue: (
-        base:#1565c0,
-        light:#bbdefb,
-        dark:#0d47a1,
+        light: #81d4fa,
+        base:#03a9f4,
+        dark: #0277bd
+    ),
+    green: (
+        light: #81c784,
+        base: #4caf50,
+        dark: #388e3c
     ),
     gray:(
         light:#808080,
@@ -42,28 +32,12 @@
         dark:#282828
     ),
     white:(
-        light:#ecf0f1,
-        base:#fff,
+        light:#ffffff,
+        base:#ecf0f1,
         dark:#ececec
     ),
     black: (
         base: #000
     )
 );
-
-$firestorm-themes-colors: ( 
-    firestorm: ( 
-    color1: palette(blue, dark),
-    color2: palette(blue, base),
-    color3: palette(blue, light),
-    color4: palette(orange, base),
-    color5: palette(white, dark),
-    color6: palette(white, base),
-    color7: palette(orange, dark),
-    color8: palette(black, base)
-    ) 
-);
-
-
-
 

@@ -6,12 +6,12 @@
         bowercopy: 'grunt-bowercopy'
     });
 
-    publicSass = './content/scss/',
-    publicCss = './content/css/',
-    publicFont = './content/fonts/',
-    vendorScript = './scripts/vendor/',
-    vendorStyle = './content/scss/',
-    devBower = './bower_components/';
+    publicSass = './content/scss',
+    publicCss = './content/css',
+    publicFont = './content/fonts',
+    vendorScript = './scripts/vendor',
+    vendorStyle = './content/scss',
+    devBower = './bower_components';
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
