@@ -7,22 +7,69 @@
 @import "materialize/materialize";
 
 .nav-red-color {
-   background-color: palette(red, base);
+    background-color: palette(red, base);
 }
 
 .page-orange-color {
     background-color: palette(orange, base) !important;
 }
 
-.icon-blue-color{
+.icon-blue-color {
     color: palette(blue, base);
 }
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
 }
 
 
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
+}
+
+.login-background {
+    background-color: palette(red, base);
+
+    .login-container {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        text-align: center;
+    }
+
+    .login-box {
+        float: none;
+        display: inline-block;
+    }
+
+    .login-logo {
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+
+    label {
+        display: block;
+        font-family: 'Roboto Condensed',Helvetica,'Lucida Grande',Arial,sans-serif;
+        text-transform: uppercase;
+        color: #999;
+        font-size: .8em;
+        line-height: 30px;
+        height: 30px;
+        font-weight: 300;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        outline: 0;
+        color: #3D3F4D;
+        background-color: #F2F2F2;
+        font-size: .9em;
+        -webkit-appearance: none;
+    }
+
+    .btn-login-full-width {
+        width: 100%;
+        height: 45px;
+        margin-top: 20px;
+    }
 }
