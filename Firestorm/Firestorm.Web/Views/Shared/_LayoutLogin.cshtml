@@ -25,7 +25,6 @@
                                 <div class="col s12">
                                     <label for="email">Email</label>
                                     <input id="email" type="email" class="validate">
-
                                 </div>
                             </div>
                             <div class="row">
@@ -37,7 +36,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12">
-                                    <button type="submit" class="waves-effect waves-light btn btn-login-full-width">Entrar</button>
+                                    <button type="button" onclick="return false;" class="waves-effect waves-light btn btn-login-full-width btn-login">Entrar</button>
                                 </div>
                             </div>
                         </form>
@@ -52,7 +51,6 @@
 
     <!--  Scripts-->
     <script type="text/javascript" src="~/Scripts/vendor/jquery/jquery.js"></script>
-    <script type="text/javascript" src="~/Scripts/vendor/jquery.easing/jquery.easing.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
