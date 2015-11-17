@@ -11,7 +11,7 @@ namespace Firestorm.Infra.MVC.Controllers
     {
 
         [Obsolete("Não use o metodo padrão para retorna Json para o cliente. Use o Metodo JsonSucess ou JsonError.")]
-        protected JsonResult Json<T>(T data)
+        protected JsonResult Json(T data)
         {
             throw new InvalidOperationException("Não use o metodo padrão para retornar Json para o cliente. Use o Metodo JsonSucess ou JsonError.");
         }
@@ -65,12 +65,12 @@ namespace Firestorm.Infra.MVC.Controllers
             return result;
         }
 
-        protected FirestormJsonResult<T> JsonSuccess<T>(T data)
+        protected FirestormJsonResult<T> JsonSuccess(T data)
         {
             return new FirestormJsonResult<T> { Data = data };
         }
 
-        protected FirestormJsonResult<T> JsonSuccess<T>(T data, JsonRequestBehavior behavior)
+        protected FirestormJsonResult<T> JsonSuccess(T data, JsonRequestBehavior behavior)
         {
             return new FirestormJsonResult<T> { Data = data, JsonRequestBehavior = behavior };
         }

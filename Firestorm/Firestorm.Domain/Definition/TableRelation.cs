@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Firestorm.Domain.Repository
+namespace Firestorm.Domain.Definition
 {
-    public class Class1
+    public class TableRelation
     {
+
     }
 }

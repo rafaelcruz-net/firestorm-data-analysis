@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Firestorm.Domain
+namespace Firestorm.Domain.Definition
 {
-    public class Class1
+    public class TableDefinition
     {
+
+
     }
 }

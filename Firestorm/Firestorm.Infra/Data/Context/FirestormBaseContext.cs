@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace Firestorm.Infra.Data.Context
 {
-    public class FirestormContext : DbContext, IUnitOfWork
+    public class FirestormBaseContext : DbContext, IUnitOfWork
     {
         ILog Logger = log4net.LogManager.GetLogger("Firestorm.Database.Context");
         
@@ -23,12 +23,12 @@ namespace Firestorm.Infra.Data.Context
         }
 
              
-        public FirestormContext(DbConnection connection, bool contextOwnsConnection) : base(connection,contextOwnsConnection)
+        public FirestormBaseContext(DbConnection connection, bool contextOwnsConnection) : base(connection,contextOwnsConnection)
         {
             this.StartUpContext();
         }
 
-        public FirestormContext(string nameOrConnectionString) 
+        public FirestormBaseContext(string nameOrConnectionString) 
             :base(nameOrConnectionString)
         {
             this.StartUpContext();

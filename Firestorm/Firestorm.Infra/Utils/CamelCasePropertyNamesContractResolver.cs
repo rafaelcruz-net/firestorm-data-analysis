@@ -6,7 +6,7 @@ namespace Firestorm.Infra.Utils
     public class CamelCasePropertyNamesContractResolver : DefaultContractResolver
     {
         public CamelCasePropertyNamesContractResolver()
-            : base(true)
+            : base()
         {
         }
 

@@ -13,10 +13,8 @@ namespace Firestorm.Infra.Data.Interfaces
         int Update(T model);
         void Delete(T model);
         List<T> GetAll();
-        List<T> GetAll(int? pageSize);
         T GetById(object id);
         List<T> Where(Expression<Func<T, bool>> expression);
-        IEnumerable<T> OrderBy(Expression<Func<T, bool>> expression);
-        string ExecutionLog { get; }
+
     }
 }

@@ -117,7 +117,7 @@ namespace Firestorm.Infra.MVC.ActionResult
             set { base.Data = value; }
         }
 
-        public string ExecutionLog
+        public new string ExecutionLog
         {
             get { return base.ExecutionLog; }
             set { base.ExecutionLog = value; }
