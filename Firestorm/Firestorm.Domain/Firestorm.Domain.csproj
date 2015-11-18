@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Definition\TableDefinition.cs" />
-    <Compile Include="Definition\TableField.cs" />
-    <Compile Include="Definition\TableRelation.cs" />
+    <Compile Include="Definition\Table.cs" />
+    <Compile Include="Definition\Field.cs" />
+    <Compile Include="Definition\FieldType.cs" />
+    <Compile Include="Definition\Relation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

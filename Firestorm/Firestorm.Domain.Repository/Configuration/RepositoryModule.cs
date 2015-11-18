@@ -30,14 +30,14 @@ namespace Firestorm.Domain.Repository.Configuration
         public override void Load()
         {
             Bind<DbContext>().ToSelf().InThreadScope();
-            Bind(typeof(IDbContext<>)).To(typeof(FirestormContext<>)).InThreadScope();
+            Bind(typeof(IDbContext)).To(typeof(FirestormContext)).InThreadScope();
             Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>)).InRequestScope();
 
 
             this.Bind(x => x.FromThisAssembly()
                             .SelectAllClasses()
                             .Excluding<DbContext>()
-                            .Excluding(typeof(FirestormContext<>))
+                            .Excluding(typeof(FirestormContext))
                             .Excluding(typeof(RepositoryBase<>))
                             .Excluding<IMapping>()
                             .BindDefaultInterface()

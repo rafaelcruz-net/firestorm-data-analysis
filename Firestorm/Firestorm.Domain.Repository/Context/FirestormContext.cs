@@ -14,41 +14,20 @@ using System.Data.Entity.Infrastructure;
 
 namespace Firestorm.Domain.Repository.Context
 {
-    public class FirestormContext<T> : FirestormBaseContext, IDbContext<T> where T : class
+    public class FirestormContext : FirestormBaseContext, IDbContext
     {
 
-        #region Properties
-        public DbSet<T> DbSet
-        {
-            get;
-            set;
-        }
-
-        public new string ExecutionLog
-        {
-            get
-            {
-                return base.ExecutionLog;
-            }
-            set
-            {
-                base.ExecutionLog = value;
-            }
-        }
-        #endregion
-
         #region Constructor
-
         public FirestormContext()
-            : base("SIARMNET.Connection")
+            : base("Firestorm.Connection")
         {
-            Database.SetInitializer<FirestormContext<T>>(null);
+            Database.SetInitializer<FirestormContext>(null);
         }
 
         public FirestormContext(DbConnection connection, bool contextOwnsConnection)
             : base(connection, contextOwnsConnection)
         {
-            Database.SetInitializer<FirestormContext<T>>(new DropCreateDatabaseAlways<FirestormContext<T>>());
+            Database.SetInitializer<FirestormContext>(new DropCreateDatabaseAlways<FirestormContext>());
         }
 
         #endregion
@@ -75,12 +54,24 @@ namespace Firestorm.Domain.Repository.Context
         }
 
 
+        public new string ExecutionLog
+        {
+            get
+            {
+                return base.ExecutionLog;
+            }
+            set
+            {
+                base.ExecutionLog = value;
+            }
+        }
+
         public new int SaveChanges()
         {
             return base.SaveChanges();
         }
 
-        public DbEntityEntry<T> Entry(T entity)
+        public new DbEntityEntry<T> Entry<T>(T entity) where T : class
         {
             return base.Entry<T>(entity);
         }

@@ -20,11 +20,18 @@ namespace Firestorm.Domain.Repository.Context
     {
 
         [Inject]
-        public IDbContext<T> DbContext
+        public IDbContext DbContext
         {
             get;
             private set;
         }
+
+        public IDbSet<T> DbSet
+        {
+            get;
+            private set;
+        }
+
            
         public RepositoryBase()
         {
@@ -34,9 +41,10 @@ namespace Firestorm.Domain.Repository.Context
             this.MaxRows = Convert.ToInt32(ConfigurationManager.AppSettings["DEFAULT_MAX_ROWS"]);
         }
 
-        public RepositoryBase(IDbContext<T> context)
+        public RepositoryBase(IDbContext context)
         {
-            this.DbContext = context; 
+            this.DbContext = context;
+            this.DbSet = this.DbContext.Set<T>();
         }
 
         public String TableName 
@@ -60,7 +68,7 @@ namespace Firestorm.Domain.Repository.Context
 
         public virtual int Save(T model)
         {
-            this.DbContext.DbSet.Add(model);
+            this.DbSet.Add(model);
             return this.SaveChanges();
         }
 
@@ -69,7 +77,7 @@ namespace Firestorm.Domain.Repository.Context
             var entry = this.DbContext.Entry(model);
 
             if (entry.State == EntityState.Detached)
-                this.DbContext.DbSet.Attach(model);
+                this.DbSet.Attach(model);
 
             this.SetModified(model, EntityState.Modified);
             return this.SaveChanges();
@@ -80,7 +88,7 @@ namespace Firestorm.Domain.Repository.Context
             var entry = this.DbContext.Entry(model);
 
             if (entry.State == EntityState.Detached)
-                this.DbContext.DbSet.Attach(model);
+                this.DbSet.Attach(model);
 
             this.SetModified(model, EntityState.Deleted);
             this.SaveChanges();
@@ -89,15 +97,15 @@ namespace Firestorm.Domain.Repository.Context
         public virtual List<T> GetAll()
         {
             if (this.MaxRows > 0)
-                return this.DbContext.DbSet.Take(MaxRows).ToList();
+                return this.DbSet.Take(MaxRows).ToList();
 
-            return this.DbContext.DbSet.ToList();
+            return this.DbSet.ToList();
 
         }
 
         public virtual T GetById(object id)
         {
-            return this.DbContext.DbSet.Find(id);
+            return this.DbSet.Find(id);
         }
 
         public virtual int SaveChanges()
@@ -108,9 +116,9 @@ namespace Firestorm.Domain.Repository.Context
         public virtual List<T> Where(Expression<Func<T, bool>> expression)
         {
             if (this.MaxRows > 0)
-                return this.DbContext.DbSet.AsNoTracking().Where(expression).Take(this.MaxRows).ToList();
+                return this.DbSet.AsNoTracking().Where(expression).Take(this.MaxRows).ToList();
 
-            return this.DbContext.DbSet.AsNoTracking().Where(expression).ToList();
+            return this.DbSet.AsNoTracking().Where(expression).ToList();
 
         }
 

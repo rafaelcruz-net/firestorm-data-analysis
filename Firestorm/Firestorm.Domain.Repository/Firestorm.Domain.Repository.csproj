@@ -84,6 +84,10 @@
     <Compile Include="Context\Interfaces\IDbContext.cs" />
     <Compile Include="Context\Interfaces\IRepositoryBase.cs" />
     <Compile Include="Context\RepositoryBase.cs" />
+    <Compile Include="Mapping\FieldMapping.cs" />
+    <Compile Include="Mapping\FieldTypeMapping.cs" />
+    <Compile Include="Mapping\TableMapping.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,9 +104,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
