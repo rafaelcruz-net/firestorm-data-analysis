@@ -2,10 +2,45 @@
 @import "_mixin";
 @import "_override_vendor";
 @import "_pallete";
-
 @import "font-awesome/font-awesome";
-@import "materialize/materialize";
+@import "foundation-sites/foundation";
 
+@include foundation-everything;
+
+.top-bar-small {
+    padding: 0.3rem;
+    background-color: palette(red, base);
+}
+
+header {
+    .menu-text {
+        color: palette(white, base);
+        font-size: 24px;
+    }
+}
+
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem;
+  p {
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+    &.copywrite {
+      color: #8f9296;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+
+}
+
+
+/*
 .nav-red-color {
     background-color: palette(red, base);
 }
@@ -78,4 +113,5 @@
     .btn-login {
         background-color: palette(red, base);
     }
-}
+}*/
+

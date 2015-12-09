@@ -6,6 +6,7 @@
         "angular": "vendor/angular/angular",
         "ngResource": "vendor/angular-resource/angular-resource",
         "ngSanitize": "vendor/angular-sanitize/angular-sanitize",
+        "bootstrap": "vendor/bootstrap-sass/bootstrap"
     },
     shim: {
         underscore: {
@@ -15,7 +16,12 @@
             exports: "jquery"
         },
         angular: {
+            deps:["jquery"],
             exports: "angular"
+        },
+        bootstrap: {
+            deps: ["jquery"],
+            exports: "bootstrap"
         },
         ngResource: {
             deps: [
@@ -30,6 +36,11 @@
     }
 });
 
-require(['angular'], function (angular) {
-    
+require(['angular', "bootstrap"], function (angular) {
+
+    $(document).ready(function () {
+        
+        
+    });
+   
 });

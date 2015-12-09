@@ -47,14 +47,6 @@
                     flatten: true
                 }]
             },
-            materialize: {
-                files: [{
-                    cwd: 'bower_components/materialize/font/',
-                    expand: true,
-                    src: ['material-design-icons/*', 'roboto/*'],
-                    dest: publicFont
-                }]
-            },
             bootstrap: {
                 files: [{
                     cwd: 'bower_components/bootstrap-sass-official/assets/fonts',
