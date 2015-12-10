@@ -9,12 +9,6 @@ namespace Firestorm.Domain.Repository.Migrations
     internal sealed class Configuration : DbMigrationsConfiguration<Firestorm.Domain.Repository.Context.FirestormContext>
     {
 
-        IDbSet<FieldType> FieldType
-        {
-            get;
-            set;
-        }
-
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -22,8 +16,6 @@ namespace Firestorm.Domain.Repository.Migrations
 
         protected override void Seed(Firestorm.Domain.Repository.Context.FirestormContext context)
         {
-
-            this.FieldType = context.Set<FieldType>();
 
             //  This method will be called after migrating to the latest version.
 

@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cidade.cs" />
     <Compile Include="Definition\Table.cs" />
     <Compile Include="Definition\Field.cs" />
     <Compile Include="Definition\FieldType.cs" />
     <Compile Include="Definition\Relation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Estado.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

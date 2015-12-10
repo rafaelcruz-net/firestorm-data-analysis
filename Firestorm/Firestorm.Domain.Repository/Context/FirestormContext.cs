@@ -27,7 +27,7 @@ namespace Firestorm.Domain.Repository.Context
         public FirestormContext(DbConnection connection, bool contextOwnsConnection)
             : base(connection, contextOwnsConnection)
         {
-            Database.SetInitializer<FirestormContext>(new DropCreateDatabaseAlways<FirestormContext>());
+            Database.SetInitializer<FirestormContext>(new CreateDatabaseIfNotExists<FirestormContext>());
         }
 
         #endregion

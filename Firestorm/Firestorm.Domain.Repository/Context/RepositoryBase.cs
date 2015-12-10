@@ -26,7 +26,7 @@ namespace Firestorm.Domain.Repository.Context
             private set;
         }
 
-        public IDbSet<T> DbSet
+        public DbSet<T> DbSet
         {
             get;
             private set;
@@ -44,7 +44,7 @@ namespace Firestorm.Domain.Repository.Context
         public RepositoryBase(IDbContext context)
         {
             this.DbContext = context;
-            this.DbSet = this.DbContext.Set<T>();
+            this.DbSet = this.DbContext.Set<T>() as DbSet<T>;
         }
 
         public String TableName 
