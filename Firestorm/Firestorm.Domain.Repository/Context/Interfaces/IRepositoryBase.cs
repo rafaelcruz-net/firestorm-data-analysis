@@ -13,7 +13,7 @@ namespace Firestorm.Domain.Repository.Context.Interfaces
 {
     public interface IRepositoryBase<T> : IRepository<T> where T : class
     {
-        string ExecutionLog { get; private set; }
+        string ExecutionLog { get; }
 
     }
 }
