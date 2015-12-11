@@ -134,10 +134,6 @@
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\fonts\materialize\Material-Design-Icons.svg" />
-    <Content Include="Content\scss\css\foundation.css" />
-    <Content Include="Content\scss\css\foundation.min.css">
-      <DependentUpon>foundation.css</DependentUpon>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gruntfile.js" />
@@ -185,9 +181,6 @@
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\font-awesome\FontAwesome.otf" />
-    <Content Include="Content\scss\css\foundation.css.map">
-      <DependentUpon>foundation.css</DependentUpon>
-    </Content>
     <Content Include="Content\css\main.css.map">
       <DependentUpon>main.css</DependentUpon>
     </Content>
