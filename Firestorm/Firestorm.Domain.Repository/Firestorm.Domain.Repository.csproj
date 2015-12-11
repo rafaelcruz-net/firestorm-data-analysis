@@ -85,6 +85,7 @@
     <Compile Include="Context\Interfaces\IDbContext.cs" />
     <Compile Include="Context\Interfaces\IRepositoryBase.cs" />
     <Compile Include="Context\RepositoryBase.cs" />
+    <Compile Include="Interfaces\ICidadeRepository.cs" />
     <Compile Include="Mapping\CidadeMapping.cs" />
     <Compile Include="Mapping\EstadoMapping.cs" />
     <Compile Include="Mapping\FieldMapping.cs" />

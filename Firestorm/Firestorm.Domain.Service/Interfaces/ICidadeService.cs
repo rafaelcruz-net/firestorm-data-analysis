@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Firestorm.Domain.Service
+namespace Firestorm.Domain.Service.Interfaces
 {
-    public class Class1
+    public interface ICidadeService
     {
+
     }
 }

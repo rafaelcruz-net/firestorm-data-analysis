@@ -14,7 +14,9 @@ namespace Firestorm.Infra.Data.Interfaces
         void Delete(T model);
         List<T> GetAll();
         T GetById(object id);
-        List<T> Where(Expression<Func<T, bool>> expression);
+        IEnumerable<T> Where(Expression<Func<T, bool>> expression);
+        IEnumerable<T> OrderBy(Expression<System.Func<T, bool>> expression);
+        IEnumerable<T> GetAll(int? pageSize);
 
     }
 }

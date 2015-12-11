@@ -16,7 +16,7 @@ using System.Configuration;
 
 namespace Firestorm.Domain.Repository.Context
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class RepositoryBase<T> where T : class
     {
 
         [Inject]
@@ -62,7 +62,7 @@ namespace Firestorm.Domain.Repository.Context
         public string ExecutionLog
         {
             get { return this.DbContext.ExecutionLog;  }
-            set { this.DbContext.ExecutionLog = value; }
+            private set { this.DbContext.ExecutionLog = value; }
         }
 
 
@@ -113,14 +113,35 @@ namespace Firestorm.Domain.Repository.Context
             return this.DbContext.SaveChanges();
         }
 
-        public virtual List<T> Where(Expression<Func<T, bool>> expression)
+        public virtual IEnumerable<T> Where(Expression<Func<T, bool>> expression)
         {
             if (this.MaxRows > 0)
-                return this.DbSet.AsNoTracking().Where(expression).Take(this.MaxRows).ToList();
+                return this.DbSet.Where(expression).Take(this.MaxRows);
 
-            return this.DbSet.AsNoTracking().Where(expression).ToList();
+            return this.DbSet.Where(expression);
 
         }
+
+        public IEnumerable<T> OrderBy(Expression<Func<T, bool>> expression)
+        {
+            if (this.MaxRows > 0)
+                return this.DbSet.OrderBy(expression).Take(this.MaxRows);
+
+            return this.DbSet.OrderBy(expression);
+        }
+
+        public IEnumerable<T> GetAll(int? pageSize)
+        {
+            if (pageSize.HasValue)
+            {
+                return (from x in this.DbSet
+                        select x).Take(pageSize.Value).ToList();
+            }
+
+            return this.GetAll();
+        }
+
+
 
         #region Private Methods
         private void SetModified(T model, EntityState state)
