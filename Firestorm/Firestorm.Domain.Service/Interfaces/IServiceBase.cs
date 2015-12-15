@@ -8,5 +8,6 @@ namespace Firestorm.Domain.Service.Interfaces
 {
     public interface IServiceBase<T>
     {
+        string ExecutionLog { get; }
     }
 }

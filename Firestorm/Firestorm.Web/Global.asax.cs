@@ -16,6 +16,8 @@ namespace Firestorm.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            System.Web.Mvc.DependencyResolver.SetResolver(new Infra.IoC.NinjectDependencyResolver(Infra.IoC.Kernel.Instance));
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Firestorm.Domain.Service.Base
             _repository = repository;
         }
 
-        public string DatabaseExecutionLog
+        public string ExecutionLog
         {
             get { return this._repository.ExecutionLog; }
         }
