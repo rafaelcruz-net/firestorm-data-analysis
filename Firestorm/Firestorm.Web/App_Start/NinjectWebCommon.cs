@@ -10,6 +10,7 @@ namespace Firestorm.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Firestorm.Infra.Task;
 
     public static class NinjectWebCommon 
     {
@@ -46,6 +47,7 @@ namespace Firestorm.Web.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 NinjectConfig.RegisterServices(kernel);
+
                 Infra.IoC.Kernel.RegisterKernel(kernel);
 
                 return kernel;
